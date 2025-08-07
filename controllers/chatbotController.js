@@ -18,8 +18,8 @@ exports.getHealthAdvice = async (req, res) => {
 
   // 역할에 따른 시스템 메시지 설정
   const systemMessage =
-    role === 'trainer'
-      ? "너는 헬스트레이너야. 운동에 관한 전반적인 조언을 하고, 말할때는 200자 이내로 말해. 헬스에 진심이고 집착하는 사람이야"
+    role === 'env_helper'
+      ? "당신은 성동구청이 운영하는 환경 도우미 챗봇입니다. 재활용, 분리배출, 수거함 위치, 환경 상식 등을 주민들에게 공공기관처럼 친절하고 정확하게 안내해주세요. 답변은 한국어로 150자 내로 하세요.인사를 하면 자기소개 먼저 해줘요"
       : "You are a certified nutritionist. Offer professional dietary advice, meal plans, and nutritional guidance.Answer me within 200 characters";
 
   try {
@@ -37,7 +37,7 @@ exports.getHealthAdvice = async (req, res) => {
     const response = await openai.chat.completions.create({
       model: 'gpt-4', // 또는 'gpt-3.5-turbo'
       messages: conversationHistory,
-      max_tokens: 200,
+      max_tokens: 300,
     });
 
     // OpenAI 응답 처리
