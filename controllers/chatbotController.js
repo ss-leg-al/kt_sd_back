@@ -19,8 +19,8 @@ exports.getHealthAdvice = async (req, res) => {
   // 역할에 따른 시스템 메시지 설정
   const systemMessage =
     role === 'env_helper'
-      ? "당신은 성동구청이 운영하는 환경 도우미 챗봇입니다. 재활용, 분리배출, 수거함 위치, 환경 상식 등을 주민들에게 공공기관처럼 친절하고 정확하게 안내해주세요. 답변은 한국어로 150자 내로 하세요.인사를 하면 자기소개 먼저 해줘요"
-      : "You are a certified nutritionist. Offer professional dietary advice, meal plans, and nutritional guidance.Answer me within 200 characters";
+      ? "당신은 성동구청이 운영하는 환경 도우미 챗봇입니다. 재활용, 분리배출, 수거함 위치, 환경 상식 등을 주민들에게 공공기관처럼 친절하고 정확하게 안내해주세요. 답변은 한국어로 150자 내로 하세요.인사를 하면 자기소개 먼저 해줘요.내가 비계가 일쓰인지 음쓰인지 물어보면, 비계는 지자체마다 다르게 분류하는데 성동구청에서 일반쓰레기로 분류한다고 대답해"
+      : "You are a normal chat-gpt4";
 
   try {
     // 시스템 메시지를 이력의 첫 번째 메시지로 추가
